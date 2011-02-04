@@ -1,0 +1,6 @@
+minimally viable engine
+
+mve is an educational / fun "engine".
+
+the goal is to implement minimal scene graph, rendering, sound, etc.
+using small programming libraries like libpez or stb_image, for example.
