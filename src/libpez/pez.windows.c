@@ -16,7 +16,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE ignoreMe0, LPSTR ignoreMe1, INT ig
 {
     LPCSTR szName = "Pez App";
     WNDCLASSEXA wc = { sizeof(WNDCLASSEX), CS_CLASSDC, MsgProc, 0L, 0L, GetModuleHandle(0), 0, 0, 0, 0, szName, 0 };
-    DWORD dwStyle = WS_SYSMENU | WS_VISIBLE | WS_POPUP;
+    DWORD dwStyle = WS_POPUPWINDOW | WS_VISIBLE | WS_CAPTION;
     DWORD dwExStyle = WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;
     RECT rect;
     int windowWidth, windowHeight, windowLeft, windowTop;
@@ -217,6 +217,9 @@ LRESULT WINAPI MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
             }
             break;
         }
+
+        case WM_CLOSE:
+            PostQuitMessage(0);
     }
 
     return DefWindowProc(hWnd, msg, wParam, lParam);

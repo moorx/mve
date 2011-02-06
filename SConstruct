@@ -14,5 +14,6 @@ mve_sources = ['#/src/main.c']
 sources = mve_sources + pez_sources + glew_sources
 
 env['CPPPATH'] = ['#/src/libpez', '#/src/glew']
+env['CPPDEFINES'] = ['GLEW_STATIC']
 
 env.Program('mve', sources) 
