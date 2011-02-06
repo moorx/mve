@@ -69,24 +69,9 @@
 - (void) drawRect:(NSRect) theRect
 {
     if (!m_didInit) {
-            
-        int TransparentWindow = 0;
-        if (TransparentWindow) {
-            int opaque = NO;
-            [[self openGLContext]
-                setValues:&opaque
-                forParameter:NSOpenGLCPSurfaceOpacity];
-    
-            [[self window] setOpaque:NO];
-            [[self window] setAlphaValue:0.99];
-        }
-        
         glewInit();
         const char* szTitle = PezInitialize(PEZ_VIEWPORT_WIDTH, PEZ_VIEWPORT_HEIGHT);
         m_didInit = YES;
-        
-        [[self window] setLevel: NSFloatingWindowLevel];
-        [[self window] makeKeyAndOrderFront: self];
         [[self window] setTitle: [NSString stringWithUTF8String: szTitle]];
     }
 
@@ -155,10 +140,8 @@
 
 @end
 
-int main(int argc, const char *argv[])
+static void PezOpenWindow()
 {
-    NSAutoreleasePool *pool = [NSAutoreleasePool new];
-    NSApplication *NSApp = [NSApplication sharedApplication];
     NSRect frame = NSMakeRect( 100., 100., 300., 300. );
     
     NSRect screenBounds = [[NSScreen mainScreen] frame];
@@ -166,19 +149,46 @@ int main(int argc, const char *argv[])
     
     View* view = [[View alloc] initWithFrame:viewBounds];
     
-    NSRect centered = NSMakeRect(NSMidX(screenBounds) - NSMidX(viewBounds),
-                                 NSMidY(screenBounds) - NSMidY(viewBounds),
-                                 viewBounds.size.width, viewBounds.size.height);
-    
     NSWindow *window = [[NSWindow alloc]
-        initWithContentRect:centered
+        initWithContentRect:viewBounds
         styleMask:NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask
         backing:NSBackingStoreBuffered
         defer:NO];
 
     [window setContentView:view];
     [window setDelegate:view];
+    [window makeFirstResponder:view];
+    [window setLevel: NSFloatingWindowLevel];
+    [window makeKeyAndOrderFront: nil];
+    [window center];
     [view release];
+}
+
+static void PezInitMenu()
+{
+    id menubar = [[NSMenu new] autorelease];
+    id app_menuitem = [[NSMenuItem new] autorelease];
+    [menubar addItem: app_menuitem];
+    [NSApp setMainMenu: menubar];
+    id appmenu = [[NSMenu new] autorelease];
+    id appname = [[NSProcessInfo processInfo] processName];
+    id quit_title = [@"Quit " stringByAppendingString: appname];
+    id quit_menuitem = [[[NSMenuItem alloc] initWithTitle: quit_title
+        action: @selector(terminate:) keyEquivalent: @"q"] autorelease];
+    [appmenu addItem: quit_menuitem];
+    [app_menuitem setSubmenu: appmenu];
+}
+
+int main(int argc, const char *argv[])
+{
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
+    
+    [NSApplication sharedApplication];
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+    [NSApp activateIgnoringOtherApps:YES];
+
+    PezOpenWindow();
+    PezInitMenu();
     
     [NSApp run];
     
