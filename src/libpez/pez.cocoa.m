@@ -166,17 +166,17 @@ static void PezOpenWindow()
 
 static void PezInitMenu()
 {
-    id menubar = [[NSMenu new] autorelease];
-    id app_menuitem = [[NSMenuItem new] autorelease];
-    [menubar addItem: app_menuitem];
-    [NSApp setMainMenu: menubar];
-    id appmenu = [[NSMenu new] autorelease];
-    id appname = [[NSProcessInfo processInfo] processName];
-    id quit_title = [@"Quit " stringByAppendingString: appname];
-    id quit_menuitem = [[[NSMenuItem alloc] initWithTitle: quit_title
+    NSMenu *menuBar = [[NSMenu new] autorelease];
+    NSMenuItem *appMenuItem = [[NSMenuItem new] autorelease];
+    [menuBar addItem: appMenuItem];
+    [NSApp setMainMenu: menuBar];
+    NSMenu *appMenu = [[NSMenu new] autorelease];
+    NSString *appName = [[NSProcessInfo processInfo] processName];
+    NSString *quitTitle = [@"Quit " stringByAppendingString: appName];
+    NSMenuItem *quitMenuItem = [[[NSMenuItem alloc] initWithTitle: quitTitle
         action: @selector(terminate:) keyEquivalent: @"q"] autorelease];
-    [appmenu addItem: quit_menuitem];
-    [app_menuitem setSubmenu: appmenu];
+    [appMenu addItem: quitMenuItem];
+    [appMenuItem setSubmenu: appMenu];
 }
 
 int main(int argc, const char *argv[])

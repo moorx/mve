@@ -1,4 +1,4 @@
-#include "pez.h"
+#include <pez.h>
 
 const char* PezInitialize(int width, int height) {
   PezDebugString("starting mve");
