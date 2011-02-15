@@ -11,7 +11,7 @@ elif sys.platform == 'win32':
 
 lua_sources = Glob('#/src/lua/*.c')
 glew_sources = ['#/src/glew/glew.c']
-mve_sources = ['#/src/main.c']
+mve_sources = Glob('#/src/*.c')
 sources = mve_sources + pez_sources + glew_sources + lua_sources
 
 env['CPPPATH'] = ['#/src/libpez', 

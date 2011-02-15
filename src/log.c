@@ -4,7 +4,7 @@
 
 static const MVELogLevel logVerbosity = MVE_LOG_DEBUG;
 
-void mveLog(MVELogLevel level, const char* message) {
+void mveLog(MVELogLevel level, const char* format, ...) {
   if (level >= logVerbosity) {
     
     switch (level) {
@@ -29,15 +29,12 @@ void mveLog(MVELogLevel level, const char* message) {
         break;
     }
 
+    va_list args;
+    va_start(args, format);
+
+    char message[1024] = {0};
+    vsnprintf(message, countof(message), format, args);
+    
     PezDebugString(message);
   }
-}
-
-void mveLogFormat(MVELogLevel level, const char* format, ...) {
-  va_list args;
-  va_start(args, format);
-
-  char msg[1024] = {0};
-  vsnprintf(msg, countof(msg), format, args);
-  mveLog(level, msg);
 }

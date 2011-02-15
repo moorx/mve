@@ -1,7 +1,8 @@
 #include <pez.h>
+#include "log.h"
 
 const char* PezInitialize(int width, int height) {
-  PezDebugString("starting mve");
+  mveLog(MVE_LOG_DEBUG, "starting mve\n");
   return "mve";
 }
 
