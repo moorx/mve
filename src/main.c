@@ -1,16 +1,24 @@
-#include <pez.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <glfw3.h>
 #include "log.h"
+#include "config.h"
 
-const char* PezInitialize(int width, int height) {
-  mveLog(MVE_LOG_DEBUG, "starting mve\n");
-  return "mve";
-}
+int main(int32_t argc, const char** argv) {
+  mveLog(MVE_LOG_INFO, "starting up");
+  MVEconfig* config = mveInitConfig("config.lua");
 
-void PezRender() {
-}
+  glfwInit();
+  glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
+  GLFWwindow window = glfwOpenWindow(config->window_width, config->window_height,
+                                     GLFW_WINDOWED, config->window_title, NULL);
 
-void PezUpdate(unsigned int ms) {
-}
+  while (glfwIsWindow(window)) {
+    glfwPollEvents();
+    glfwSwapBuffers();
+  }
 
-void PezHandleMouse(int x, int y, int action) {
+  glfwTerminate();
+
+  return 0;
 }

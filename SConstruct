@@ -2,21 +2,30 @@ import sys
 
 env = Environment()
 
-if sys.platform == 'darwin':
-    pez_sources = ['#/src/libpez/pez.cocoa.m']
-    env['FRAMEWORKS'] = ['Cocoa', 'OpenGL']
-elif sys.platform == 'win32':
-    pez_sources = ['#/src/libpez/pez.windows.c']
-    env['LIBS'] = ['user32', 'gdi32', 'opengl32']
 
-lua_sources = Glob('#/src/lua/*.c')
+if sys.platform == 'darwin':
+    env['FRAMEWORKS'] = ['Cocoa', 'OpenGL']
+    env['LINKFLAGS'] = ['-pagezero_size', '10000', '-image_base', '100000000']
+elif sys.platform == 'win32':
+    env['LIBS'] += ['user32', 'gdi32', 'opengl32']
+
+
 glew_sources = ['#/src/glew/glew.c']
 mve_sources = Glob('#/src/*.c')
-sources = mve_sources + pez_sources + glew_sources + lua_sources
+sources = mve_sources + glew_sources
 
-env['CPPPATH'] = ['#/src/libpez', 
+
+env['LIBPATH'] = ['#/src/glfw',
+                  '#/src/luajit']
+
+env['LIBS'] = ['glfw',
+               'luajit']
+
+
+env['CPPPATH'] = ['#/src/glfw',
                   '#/src/glew',
-                  '#/src/lua']
+                  '#/src/luajit']
+
 env['CPPDEFINES'] = ['GLEW_STATIC']
 
 env.Program('mve', sources) 

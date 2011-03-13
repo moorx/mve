@@ -1,40 +1,38 @@
 #include <stdarg.h>
-#include <pez.h>
+#include <stdio.h>
 #include "log.h"
 
-static const MVELogLevel logVerbosity = MVE_LOG_DEBUG;
+static const int32_t logVerbosity = MVE_LOG_DEBUG;
 
-void mveLog(MVELogLevel level, const char* format, ...) {
+void mveLog(int32_t level, const char* format, ...) {
   if (level >= logVerbosity) {
     
     switch (level) {
       case MVE_LOG_DEBUG:
-        PezDebugString("[DEBUG] ");
+        printf("[DEBUG] ");
         break;
 
       case MVE_LOG_INFO:
-        PezDebugString("[INFO] ");
+        printf("[INFO] ");
         break;
 
       case MVE_LOG_WARN:
-        PezDebugString("[WARN] ");
+        printf("[WARN] ");
         break;
 
       case MVE_LOG_ERROR:
-        PezDebugString("[ERROR] ");
+        printf("[ERROR] ");
         break;
 
       case MVE_LOG_FATAL:
-        PezDebugString("[FATAL] ");
+        printf("[FATAL] ");
         break;
     }
 
     va_list args;
     va_start(args, format);
-
-    char message[1024] = {0};
-    vsnprintf(message, countof(message), format, args);
-    
-    PezDebugString(message);
+    vprintf(format, args);
+    printf("\n");
+    va_end(args);
   }
 }
