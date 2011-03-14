@@ -4,9 +4,11 @@
 #include "log.h"
 #include "config.h"
 
+#define MVE_CONFIG_FILE_NAME "config.lua"
+
 int main(int32_t argc, const char** argv) {
   mveLog(MVE_LOG_INFO, "starting up");
-  MVEconfig* config = mveInitConfig("config.lua");
+  MVEconfig* config = mveInitConfig(MVE_CONFIG_FILE_NAME);
 
   glfwInit();
   glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
@@ -14,8 +16,8 @@ int main(int32_t argc, const char** argv) {
                                      GLFW_WINDOWED, config->window_title, NULL);
 
   while (glfwIsWindow(window)) {
-    glfwPollEvents();
     glfwSwapBuffers();
+    glfwPollEvents();
   }
 
   glfwTerminate();

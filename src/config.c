@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include <lauxlib.h>
+#include <ljit.h>
 #include "config.h"
 #include "log.h"
 
