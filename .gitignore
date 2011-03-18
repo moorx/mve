@@ -6,3 +6,4 @@ config.log
 tags
 xcuserdata
 project.xcworkspace
+xcode/build
