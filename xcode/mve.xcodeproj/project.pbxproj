@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		855D0E471332CB0A00BE40B5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855D0E461332CB0A00BE40B5 /* OpenGL.framework */; };
+		855D0E601332CE0800BE40B5 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E561332CE0800BE40B5 /* config.c */; };
+		855D0E611332CE0800BE40B5 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E591332CE0800BE40B5 /* glew.c */; };
+		855D0E621332CE0800BE40B5 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E5D1332CE0800BE40B5 /* log.c */; };
+		855D0E631332CE0800BE40B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E5F1332CE0800BE40B5 /* main.c */; };
+		855D0E671332DC2100BE40B5 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855D0E661332DC2100BE40B5 /* libluajit.a */; };
+		855D0E691332DC3900BE40B5 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855D0E681332DC3900BE40B5 /* libglfw.a */; };
+		855D0E6D1332EB8900BE40B5 /* config.lua in Resources */ = {isa = PBXBuildFile; fileRef = 855D0E6C1332EB8900BE40B5 /* config.lua */; };
+		85F0F7D51332C9EC0031C2BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F0F7D41332C9EC0031C2BC /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		855D0E461332CB0A00BE40B5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		855D0E561332CE0800BE40B5 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = config.c; path = ../src/config.c; sourceTree = "<group>"; };
+		855D0E571332CE0800BE40B5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../src/config.h; sourceTree = "<group>"; };
+		855D0E591332CE0800BE40B5 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glew.c; sourceTree = "<group>"; };
+		855D0E5A1332CE0800BE40B5 /* glew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
+		855D0E5B1332CE0800BE40B5 /* glxew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glxew.h; sourceTree = "<group>"; };
+		855D0E5C1332CE0800BE40B5 /* wglew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wglew.h; sourceTree = "<group>"; };
+		855D0E5D1332CE0800BE40B5 /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = log.c; path = ../src/log.c; sourceTree = "<group>"; };
+		855D0E5E1332CE0800BE40B5 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = log.h; path = ../src/log.h; sourceTree = "<group>"; };
+		855D0E5F1332CE0800BE40B5 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../src/main.c; sourceTree = "<group>"; };
+		855D0E641332D05F00BE40B5 /* mve-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mve-Info.plist"; sourceTree = "<group>"; };
+		855D0E661332DC2100BE40B5 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../src/luajit/mac/libluajit.a; sourceTree = "<group>"; };
+		855D0E681332DC3900BE40B5 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../src/glfw/mac/libglfw.a; sourceTree = "<group>"; };
+		855D0E6C1332EB8900BE40B5 /* config.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.lua; path = ../config.lua; sourceTree = "<group>"; };
+		85F0F7D01332C9EC0031C2BC /* mve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F0F7D41332C9EC0031C2BC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85F0F7CD1332C9EC0031C2BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				855D0E691332DC3900BE40B5 /* libglfw.a in Frameworks */,
+				855D0E671332DC2100BE40B5 /* libluajit.a in Frameworks */,
+				855D0E471332CB0A00BE40B5 /* OpenGL.framework in Frameworks */,
+				85F0F7D51332C9EC0031C2BC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		855D0E581332CE0800BE40B5 /* glew */ = {
+			isa = PBXGroup;
+			children = (
+				855D0E591332CE0800BE40B5 /* glew.c */,
+				855D0E5A1332CE0800BE40B5 /* glew.h */,
+				855D0E5B1332CE0800BE40B5 /* glxew.h */,
+				855D0E5C1332CE0800BE40B5 /* wglew.h */,
+			);
+			name = glew;
+			path = ../src/glew;
+			sourceTree = "<group>";
+		};
+		855D0E6A1332DC6600BE40B5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				855D0E581332CE0800BE40B5 /* glew */,
+				855D0E681332DC3900BE40B5 /* libglfw.a */,
+				855D0E661332DC2100BE40B5 /* libluajit.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		855D0E6B1332EB5800BE40B5 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				855D0E6C1332EB8900BE40B5 /* config.lua */,
+				855D0E641332D05F00BE40B5 /* mve-Info.plist */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		85F0F7C51332C9EC0031C2BC = {
+			isa = PBXGroup;
+			children = (
+				855D0E6B1332EB5800BE40B5 /* Configuration */,
+				855D0E6A1332DC6600BE40B5 /* Libraries */,
+				855D0E561332CE0800BE40B5 /* config.c */,
+				855D0E571332CE0800BE40B5 /* config.h */,
+				855D0E5D1332CE0800BE40B5 /* log.c */,
+				855D0E5E1332CE0800BE40B5 /* log.h */,
+				855D0E5F1332CE0800BE40B5 /* main.c */,
+				85F0F7D31332C9EC0031C2BC /* Frameworks */,
+				85F0F7D11332C9EC0031C2BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85F0F7D11332C9EC0031C2BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85F0F7D01332C9EC0031C2BC /* mve.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85F0F7D31332C9EC0031C2BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				855D0E461332CB0A00BE40B5 /* OpenGL.framework */,
+				85F0F7D41332C9EC0031C2BC /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85F0F7CF1332C9EC0031C2BC /* mve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F0F7EE1332C9ED0031C2BC /* Build configuration list for PBXNativeTarget "mve" */;
+			buildPhases = (
+				85F0F7CC1332C9EC0031C2BC /* Sources */,
+				85F0F7CD1332C9EC0031C2BC /* Frameworks */,
+				85F0F7CE1332C9EC0031C2BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mve;
+			productName = mve;
+			productReference = 85F0F7D01332C9EC0031C2BC /* mve.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85F0F7C71332C9EC0031C2BC /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 85F0F7CA1332C9EC0031C2BC /* Build configuration list for PBXProject "mve" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85F0F7C51332C9EC0031C2BC;
+			productRefGroup = 85F0F7D11332C9EC0031C2BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85F0F7CF1332C9EC0031C2BC /* mve */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85F0F7CE1332C9EC0031C2BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				855D0E6D1332EB8900BE40B5 /* config.lua in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85F0F7CC1332C9EC0031C2BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				855D0E601332CE0800BE40B5 /* config.c in Sources */,
+				855D0E611332CE0800BE40B5 /* glew.c in Sources */,
+				855D0E621332CE0800BE40B5 /* log.c in Sources */,
+				855D0E631332CE0800BE40B5 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		85F0F7EC1332C9EC0031C2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = build/debug;
+				CONFIGURATION_TEMP_DIR = build/obj/debug;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					../src/glfw/mac,
+					../src/luajit/mac,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OBJROOT = build/obj;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-pagezero_size",
+					10000,
+					"-image_base",
+					100000000,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				SDKROOT = macosx;
+				SYMROOT = build;
+			};
+			name = Debug;
+		};
+		85F0F7ED1332C9EC0031C2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CONFIGURATION_BUILD_DIR = build/release;
+				CONFIGURATION_TEMP_DIR = build/obj/release;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					../src/glfw/mac,
+					../src/luajit/mac,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OBJROOT = build/obj;
+				OTHER_LDFLAGS = (
+					"-pagezero_size",
+					10000,
+					"-image_base",
+					100000000,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				SDKROOT = macosx;
+				SYMROOT = build;
+			};
+			name = Release;
+		};
+		85F0F7EF1332C9ED0031C2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					../src/glew,
+					../src/luajit,
+					../src/glfw,
+				);
+				INFOPLIST_FILE = "mve-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../src/luajit/mac\"",
+					"\"$(SRCROOT)/../src/glfw/mac\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		85F0F7F01332C9ED0031C2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					../src/glew,
+					../src/luajit,
+					../src/glfw,
+				);
+				INFOPLIST_FILE = "mve-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../src/luajit/mac\"",
+					"\"$(SRCROOT)/../src/glfw/mac\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85F0F7CA1332C9EC0031C2BC /* Build configuration list for PBXProject "mve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F0F7EC1332C9EC0031C2BC /* Debug */,
+				85F0F7ED1332C9EC0031C2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F0F7EE1332C9ED0031C2BC /* Build configuration list for PBXNativeTarget "mve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F0F7EF1332C9ED0031C2BC /* Debug */,
+				85F0F7F01332C9ED0031C2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85F0F7C71332C9EC0031C2BC /* Project object */;
+}
