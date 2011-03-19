@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8525B90C1335718F00A4337A /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8525B90B1335718F00A4337A /* libGLEW.a */; };
 		855D0E471332CB0A00BE40B5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855D0E461332CB0A00BE40B5 /* OpenGL.framework */; };
 		855D0E601332CE0800BE40B5 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E561332CE0800BE40B5 /* config.c */; };
-		855D0E611332CE0800BE40B5 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E591332CE0800BE40B5 /* glew.c */; };
 		855D0E621332CE0800BE40B5 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E5D1332CE0800BE40B5 /* log.c */; };
 		855D0E631332CE0800BE40B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 855D0E5F1332CE0800BE40B5 /* main.c */; };
 		855D0E671332DC2100BE40B5 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855D0E661332DC2100BE40B5 /* libluajit.a */; };
@@ -19,13 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8525B90B1335718F00A4337A /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../src/glew/mac/libGLEW.a; sourceTree = "<group>"; };
 		855D0E461332CB0A00BE40B5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		855D0E561332CE0800BE40B5 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = config.c; path = ../src/config.c; sourceTree = "<group>"; };
 		855D0E571332CE0800BE40B5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../src/config.h; sourceTree = "<group>"; };
-		855D0E591332CE0800BE40B5 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glew.c; sourceTree = "<group>"; };
-		855D0E5A1332CE0800BE40B5 /* glew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
-		855D0E5B1332CE0800BE40B5 /* glxew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glxew.h; sourceTree = "<group>"; };
-		855D0E5C1332CE0800BE40B5 /* wglew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wglew.h; sourceTree = "<group>"; };
 		855D0E5D1332CE0800BE40B5 /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = log.c; path = ../src/log.c; sourceTree = "<group>"; };
 		855D0E5E1332CE0800BE40B5 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = log.h; path = ../src/log.h; sourceTree = "<group>"; };
 		855D0E5F1332CE0800BE40B5 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = ../src/main.c; sourceTree = "<group>"; };
@@ -42,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8525B90C1335718F00A4337A /* libGLEW.a in Frameworks */,
 				855D0E691332DC3900BE40B5 /* libglfw.a in Frameworks */,
 				855D0E671332DC2100BE40B5 /* libluajit.a in Frameworks */,
 				855D0E471332CB0A00BE40B5 /* OpenGL.framework in Frameworks */,
@@ -52,22 +50,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		855D0E581332CE0800BE40B5 /* glew */ = {
-			isa = PBXGroup;
-			children = (
-				855D0E591332CE0800BE40B5 /* glew.c */,
-				855D0E5A1332CE0800BE40B5 /* glew.h */,
-				855D0E5B1332CE0800BE40B5 /* glxew.h */,
-				855D0E5C1332CE0800BE40B5 /* wglew.h */,
-			);
-			name = glew;
-			path = ../src/glew;
-			sourceTree = "<group>";
-		};
 		855D0E6A1332DC6600BE40B5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				855D0E581332CE0800BE40B5 /* glew */,
+				8525B90B1335718F00A4337A /* libGLEW.a */,
 				855D0E681332DC3900BE40B5 /* libglfw.a */,
 				855D0E661332DC2100BE40B5 /* libluajit.a */,
 			);
@@ -174,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				855D0E601332CE0800BE40B5 /* config.c in Sources */,
-				855D0E611332CE0800BE40B5 /* glew.c in Sources */,
 				855D0E621332CE0800BE40B5 /* log.c in Sources */,
 				855D0E631332CE0800BE40B5 /* main.c in Sources */,
 			);
@@ -263,6 +248,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../src/luajit/mac\"",
 					"\"$(SRCROOT)/../src/glfw/mac\"",
+					"\"$(SRCROOT)/../src/glew/mac\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -287,6 +273,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../src/luajit/mac\"",
 					"\"$(SRCROOT)/../src/glfw/mac\"",
+					"\"$(SRCROOT)/../src/glew/mac\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
