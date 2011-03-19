@@ -66,18 +66,18 @@
 #endif /* GLEW_MX */
 
 #if defined(__APPLE__)
-#include <mach-o/dyld.h>
+#include <dlfcn.h>
 #include <stdlib.h>
 #include <string.h>
 
 void* NSGLGetProcAddress (const GLubyte *name)
 {
-  static const struct mach_header* image = NULL;
-  NSSymbol symbol;
+  static void* image = NULL;
+  void* symbol;
   char* symbolName;
   if (NULL == image)
   {
-    image = NSAddImage("/System/Library/Frameworks/OpenGL.framework/Versions/Current/OpenGL", NSADDIMAGE_OPTION_RETURN_ON_ERROR);
+    image = dlopen("/System/Library/Frameworks/OpenGL.framework/Versions/Current/OpenGL", RTLD_NOW);
   }
   /* prepend a '_' for the Unix C symbol mangling convention */
   symbolName = (char*) malloc(strlen((const char*)name) + 2);
@@ -86,9 +86,9 @@ void* NSGLGetProcAddress (const GLubyte *name)
   symbol = NULL;
   /* if (NSIsSymbolNameDefined(symbolName))
 	 symbol = NSLookupAndBindSymbol(symbolName); */
-  symbol = image ? NSLookupSymbolInImage(image, symbolName, NSLOOKUPSYMBOLINIMAGE_OPTION_BIND | NSLOOKUPSYMBOLINIMAGE_OPTION_RETURN_ON_ERROR) : NULL;
+  symbol = image ? dlsym(image, symbolName) : NULL;
   free(symbolName);
-  return symbol ? NSAddressOfSymbol(symbol) : NULL;
+  return symbol;
 }
 #endif /* __APPLE__ */
 
